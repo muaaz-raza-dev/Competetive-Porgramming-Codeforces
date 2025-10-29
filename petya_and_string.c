@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main(){
-    char str1[101] , str2[101];
+    char str1[102] , str2[102];
     fgets(str1,sizeof(str1),stdin);
     fgets(str2,sizeof(str2),stdin);
 

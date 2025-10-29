@@ -2,17 +2,22 @@
 #include <string.h>
 
 int main(){
-    char username[101];
+    char username[102];
     fgets(username,sizeof(username),stdin);
-    int username_len = strlen(username) - 1 ;
+    username[strcspn(username, "\n")] = '\0';
+    int username_len = strlen(username);
 
-    int non_distincts = 0;
+    int distincts_letters[26] = {0};
+    int distincts = 0;
+
     for (int i = 0; i < username_len; i++){
-        for (int j = 0; j < username_len; j++){
-            if(i != j && username[i] == username[j])non_distincts++;
-        }
+        int index = username[i] - 'a';
+        if(!distincts_letters[index]) distincts++;
+        distincts_letters[index]  = 1 ;
     }
-    int distincts =username_len-non_distincts;
+
+
+    
     printf("%s",distincts%2!=0?"IGNORE HIM!":"CHAT WITH HER!");
     return 0;
     
