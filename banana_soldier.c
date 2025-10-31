@@ -7,7 +7,9 @@ int main(void) {
     scanf("%d %d %d",&b_cost,&amount,&total_b);
     
     int final_cost = b_cost*((total_b*(total_b+1))/2);
+    
 
+    
     printf("%d",amount > final_cost ? 0 : final_cost-amount);
     
     return 0;
